@@ -1,0 +1,40 @@
+.workshopsList
+  .workshop
+    position relative
+    &.workshopOntiveros
+      bgPerson('img/workshopOntiverosBg.png')
+      .name
+        background url('img/workshopOntiverosNameBg.png')
+        width 50%
+        bottom -10px
+        left -25px
+        padding 1em
+        .w_name
+          font-family 'bebas'
+          text-transform uppercase
+          font-size 52px
+        .full_name
+          font-family 'InputMonoCompressed-Regular'
+          font-size 15px
+          text-transform uppercase
+          .s_name:after
+            content "///"
+    .name
+      position absolute
+      
+    img
+      opacity 0
+      width 100%
+      
+@media screen and (max-width: 767px)
+  .workshopsList
+    .workshop
+      height 335px
+      &.workshopOntiveros
+        background url('img/workshopOntiverosBg-min.png')
+        background-size cover
+        .name
+          bgPersonName('img/workshopOntiverosNameBg-min.png')
+          width 160px
+          bottom 20px
+          left 0

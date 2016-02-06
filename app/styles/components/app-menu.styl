@@ -1,0 +1,70 @@
+#menu
+  background url('img/menuBg.png')
+  cursor pointer
+  height 67px
+  position absolute
+  right 15%
+  top 50px
+  width 60px
+  z-index 1000
+  text-align center
+  .openMenu
+    position relative
+    top .5em
+    display block 
+    margin 0 auto
+  .closeMenu
+    cursor pointer
+    position fixed
+    height 67px
+    width 60px
+    right 15%
+    top 66px
+  .selection
+    background rgba($violet)
+    position fixed
+    top 0
+    left 0
+    width 100%
+    height 100%
+    ul
+      margin 0
+      padding 0
+      cursor auto
+      li
+        font-family 'bebas'
+        margin 1em
+        text-transform uppercase
+        list-style none
+        &:not(:first-child)
+          font-size 28px
+        a, a:visited
+          text-decoration none
+          color inherit
+          &:hover
+            color $yellow
+          
+  .foot
+    padding-top 2em
+    p
+      font-size 14px
+      font-family 'InputMonoCompressed-Regular'
+      color $yellow
+    .pleca
+      background $purple
+      position absolute
+      bottom 0 
+      left 0
+      height 10px
+      width 100%
+  .selection-enter
+    opacity 0.01
+    &.selection-enter-active
+      opacity 1
+      transition opacity .5s ease-in
+
+  .selection-leave
+    opacity 1
+    &.selection-leave-active
+      opacity 0.01
+      transition opacity .5s ease-in

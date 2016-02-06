@@ -1,19 +1,49 @@
 <div id="menu">
   
-  <div {{action "showMenu"}} > Menú </div>
+  <div {{action "showMenu"}} >
+    <span class="openMenu icon-menu"></span>
+  </div>
 
   {{#if isMenuVisible}}
-    <ul>
-      <li>
-        <h1>Anomaly Visual Fest</h1>
-      </li>
-      <li> Conferencias </li>
-      <li> Talleres </li>
-      <li> Calendario </li>
-      <li> Boletos </li>
-      <li> Sede </li>
-      <li> Contacto </li>
-    </ul>
+
+    {{#transition-group transition-class="selection"}}
+    <div class="selection VCenter">
+      <div class="closeMenu">
+        <span  {{action "hideMenu"}} class="icon-x"></span> 
+      </div>
+      
+      <ul>
+        <li {{action "hideMenu"}}>
+          {{#link-to "index"}}<span class="icon-logo1"></span>  {{/link-to}} 
+        </li>
+        <li {{action "hideMenu"}} > 
+          {{#link-to "conferences"}} Conferencias {{/link-to}} 
+        </li>
+        <li {{action "hideMenu"}} > 
+          {{#link-to "workshops"}} Talleres {{/link-to}} 
+        </li>
+        <li {{action "hideMenu"}} > 
+          {{#link-to "calendar"}} Calendario {{/link-to}} 
+        </li>
+        <li {{action "hideMenu"}} > 
+          {{#link-to "tickets"}} Boletos {{/link-to}} 
+        </li>
+        <li {{action "hideMenu"}} > 
+          {{#link-to "location"}} Sede {{/link-to}} 
+        </li>
+        <li  >  
+          {{mailtolink 'Contacto' 'ixtapa@a.com.mx'}}
+        </li>
+      </ul>
+      <div class="foot">
+        <p>Powered by</p>
+        
+        <img src="assets/img/logos.png">
+
+        <div class="pleca"></div>
+      </div>
+    </div>
+    {{/transition-group}}
 
   {{/if}}
   

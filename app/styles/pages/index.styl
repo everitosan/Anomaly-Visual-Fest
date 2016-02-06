@@ -1,0 +1,83 @@
+#index
+  .image
+    position relative
+    img
+      position absolute
+      top 10px
+      left 0
+      width 100%
+  .head
+    padding-top 8em
+    position relative
+    padding-bottom 15em
+    [class^="icon-"], [class*=" icon-"]
+      font-size 22em
+    .date
+      font-family 'bebas'
+      text-transform uppercase
+      font-weight 100
+      letter-spacing 1px
+      line-height 1
+      .days
+        position relative 
+        left -14px
+        margin-top 30px
+        font-size 75px
+        display block
+      .month
+        font-family 'league'
+        font-size 55px
+        letter-spacing 2px
+        color $yellow
+    .intro, .des
+      margin-top 1em
+      font-family 'InputMonoCompressed-Light'
+      font-size 18px
+      width 72%
+    .des
+      font-size 14px
+      h1.title
+        font-size 14px
+        display inline
+        color $yellow
+  .conferencistas, .talleres
+    h2
+      font-family 'bebas'
+      font-size 54px
+      margin 0
+      padding 0.2em 1.3em
+      background url('img/bgConferencias.png')
+      background-size 100%   
+      background-repeat no-repeat
+      background-position center
+  .talleres
+    h2
+      background url('img/bgTalleres.png')
+      background-size 100%   
+      background-repeat no-repeat
+      background-position center
+      
+
+@media screen and (max-width: 767px) 
+  #index
+    .conferencistas, .talleres
+      h2
+        text-align center
+        font-size 40px
+    .head
+      padding-bottom 0
+      [class^="icon-"], [class*=" icon-"]
+        font-size 14em
+      .date
+        .days
+          display inline
+          left 0
+        .month
+          font-size 75px
+      .des
+        width 100%
+        text-align center
+        h1.title
+          display block
+        .cap
+          text-transform capitalize  

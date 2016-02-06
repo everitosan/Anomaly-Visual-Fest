@@ -1,4 +1,90 @@
-{{outlet}}
-{{#each model as |activity| }}
-  <p> {{ activity.name }} </p>
-{{/each}}
+<section id="index">
+  
+  <article>
+
+    <div class="image">
+      <img src="assets/img/detailBgHead.png">    
+      <img src="assets/img/head.png">    
+      <img src="assets/img/glitch.png">
+    </div>
+      
+    <div class="head"> 
+      <div class="pure-g ">
+        <div class="pure-u-2-24 pure-u-md-4-24"></div>
+        <div class="pure-u-15-24 pure-u-md-8-24">
+          <span class="icon-logo2"></span>
+          <div class="date">
+            <span class="days">
+              19, 20 & 21 
+            </span>
+            <span class="month">
+              mayo 2016
+            </span>
+          </div>
+          <div class="intro">
+            A! Diseño y Digital Invaders acercan la tecnología al mundo de la gráfica.
+          </div>
+        </div>
+        <div class="pure-u-5-24 pure-u-md-8-24"></div>
+        <div class="pure-u-2-24 pure-u-md-4-24"></div>
+      </div>
+      <div class="pure-g">
+        <div class="pure-u-2-24 pure-u-md-4-24"></div>
+        <div class="pure-u-20-24 pure-u-md-8-24">
+          <div class="des">
+            <h1 class="title" >ANOMALY VISUAL FEST</h1>
+            <span class="cap">
+              se
+            </span>
+              inspira en proyectos digitales guiados por expertos creativos para que docentes y profesionales del diseño experimenten y construyan un nuevo discurso visual.
+          </div>
+        </div>
+        <div class="pure-u-1-24 pure-u-md-8-24"></div>
+        <div class="pure-u-1-24 pure-u-md-4-24"></div>
+      </div>
+    </div>
+  </article>
+
+
+
+  <article class="conferencistas">
+    
+    <div class="pure-g">
+      <div class="pure-u-1 pure-u-md-3-24"></div>
+      <div class="pure-u-1 pure-u-md-18-24">
+        <h2> Conferencistas </h2>
+        <div class="personList">
+          {{#each model as |activity index| }}
+            {{#if activity.isConference }}
+              {{ app-person activity=activity index=index}}
+            {{/if}}
+          {{/each}}
+        </div>  
+      </div>
+      <div class="pure-u-1 pure-u-md-3-24"></div>
+      
+    </div>
+    
+  </article>
+    
+  <article class="talleres">
+    <div class="pure-g">
+      <div class="pure-u-1 pure-u-md-3-24"></div>
+      <div class="pure-u-1 pure-u-md-18-24">
+        <h2> taller para docentes </h2>
+        <div class="workshopsList">
+          {{#each model as |activity index| }}
+            {{#if activity.isWorkshop }}
+              {{ listing-workshops activity=activity index=index}}
+            {{/if}}
+          {{/each}}
+        </div>  
+      </div>
+      <div class="pure-u-1 pure-u-md-3-24"></div>
+    </div>
+    
+  </article>
+
+  {{footer-button type='Calendar'  }}
+  
+</section>

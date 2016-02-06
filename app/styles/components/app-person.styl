@@ -1,0 +1,132 @@
+.personList
+  font-size 0
+  &>div
+    display inline-block
+    vertical-align top
+    width 50%
+.person
+  cursor pointer
+  position relative
+  width 100%
+  display block
+  margin 0 auto
+  &.person0
+    bgPerson('img/person0Bg.png')
+    .name
+      bgPersonName('img/person0NameBg.png')
+      bottom 4%
+      left 11%
+      width 180px
+      height 180px
+      .s_name
+        padding-left 1em
+  &.person1
+    bgPerson('img/person1Bg.png')
+    .name
+      bgPersonName('img/person1NameBg.png')
+      bottom 7%
+      right 3%
+      width 190px
+      height 180px
+      .s_name
+        padding-left .8em
+  &.person2
+    bgPerson('img/person2Bg.png')
+    top -160px
+    .name
+      bgPersonName('img/person2NameBg.png')
+      bottom 6%
+      right 6%
+      width 174px
+      height 180px
+  &.person3
+    bgPerson('img/person3Bg.png')
+    .name
+      bgPersonName('img/person3NameBg.png')
+      bottom 6.3%
+      left 8%
+      width 200px
+      height 170px
+      .full_name
+        div
+          display inline-block
+    .info
+      width 70%
+  &.person4
+    bgPerson('img/person4Bg.png')
+    top -215px
+    .name
+      bgPersonName('img/person4NameBg.png')
+      bottom 6%
+      left 4%
+      width 180px
+      height 270px
+    .info
+      width 90%
+  &.person5
+    bgPerson('img/person5Bg.png')
+    left -8%
+    .name
+      bgPersonName('img/person5NameBg.png')
+      bottom 6%
+      right 5%
+      width 177px
+      height 184px
+      .s_name
+        padding-left .65em
+  img
+    opacity 0
+    width 100%
+  .name
+    position absolute 
+    font-size 16px
+    .full_name
+      margin-top .4em
+      text-transform uppercase
+      font-family 'bebas'
+      font-size 52px
+      div
+        line-height .8
+  .info
+    font-family 'InputMonoCompressed-Regular'
+    font-size 15px
+    text-transform uppercase
+    margin-top 1.3em
+    margin-left .6em
+    .location:after
+      content "///"
+@media screen and (max-width: 1200px) 
+  .person
+    &.person2
+      top -120px
+    &.person4
+      top -175px
+@media screen and (max-width: 767px) 
+  .personList
+    &>div
+      width 100%
+  .person
+    height 335px
+    width 100%  
+    &.person0
+      background url('img/person0Bg-min.png')
+      background-size cover
+    &.person1
+      background url('img/person1Bg-min.png')
+      background-size cover
+    &.person2
+      background url('img/person2Bg-min.png')
+      background-size cover
+      background-position center
+      top 0
+    &.person3
+      background url('img/person3Bg-min.png')
+      background-size cover
+    &.person4
+      top 0
+      background url('img/person4Bg-min.png')
+      background-size cover
+    &.person5
+      background url('img/person5Bg-min.png')
+      background-size cover
+      left 0
