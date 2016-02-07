@@ -6,8 +6,11 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('conferences',  { path:'/conferences/:conference_id'});
-  this.route('workshops',  { path:'/workshops/:workshop_id'});;
+  this.route('index', {path : '/'});
+  this.route('conferences');
+  this.route('conference',  { path:'conference/:conference_id'});
+  this.route('workshops');
+  this.route('workshop',  { path:'/workshop/:workshop_id'});
   this.route('calendar');
   this.route('tickets');
   this.route('location');

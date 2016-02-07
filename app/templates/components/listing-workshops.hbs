@@ -1,4 +1,4 @@
-<a href="/workshops/{{activity.id}}"> 
+{{#link-to 'workshop' activity}}
   <div class="workshop workshop{{activity.person.second_name}}">
     <img src="{{activity.image}}">
     <div class="name">
@@ -14,4 +14,4 @@
       
     </div>
   </div>
-</a>
+{{/link-to}}

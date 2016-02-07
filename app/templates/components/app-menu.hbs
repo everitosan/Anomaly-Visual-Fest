@@ -1,13 +1,15 @@
 <div id="menu">
   <div class="getTickets">
-    <div class="text">
-      <span>
-        SOLICITA 
-      </span>
-      TUS ENTRADAS
-    </div>
+    <a href="mailto:ixtapa@a.com.mx">
+      <div class="text">
+        <span>
+          SOLICITA 
+        </span>
+        TUS ENTRADAS
+      </div>
+    </a>
   </div>
-  
+
   <div class="menuHandler" {{action "showMenu"}} >
     <span class="openMenu icon-menu"></span>
   </div>
@@ -24,10 +26,10 @@
         <li {{action "hideMenu"}}>
           {{#link-to "index"}}<span class="icon-logo1"></span>  {{/link-to}} 
         </li>
-        <li {{action "goConferences"}} > 
+        <li {{action "hideMenu"}} > 
           {{#link-to "conferences"}} Conferencias {{/link-to}} 
         </li>
-        <li {{action "goWorkshops"}} > 
+        <li {{action "hideMenu"}} > 
           {{#link-to "workshops"}} Talleres {{/link-to}} 
         </li>
         <li {{action "hideMenu"}} > 
