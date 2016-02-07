@@ -1,4 +1,5 @@
 import DS from 'ember-data';
+import Ember from 'ember';
 
 export default DS.Model.extend({
   type: DS.attr('string'),
@@ -8,9 +9,9 @@ export default DS.Model.extend({
   image: DS.attr('string'),
   person: DS.attr(),
   isConference: Ember.computed('type',function() {
-    return this.get('type') === 'C'
+    return this.get('type') === 'C';
   }),
   isWorkshop: Ember.computed('type',function() {
-    return this.get('type') === 'W'
+    return this.get('type') === 'W';
   }),
 });

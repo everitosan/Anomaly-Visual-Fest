@@ -14,8 +14,13 @@
         
   .profile
     position relative
-    img
+    .imContainer
+      background-size auto 100% !important
+      background-repeat no-repeat !important
       width 80%
+    img
+      opacity 0
+      width 100%
     .details
       position absolute
       top 0
@@ -26,7 +31,7 @@
       height 100%
       width 20%
       div
-        padding 28px 0 10px 5px
+        padding 20px 0 5px 5px
         box-sizing border-box
         margin 5px 0
         &:not(span)
@@ -37,7 +42,7 @@
           font-size 15px 
           text-transform uppercase
           display block
-          line-height 0
+          line-height .7
       .day
         bgPersonName('img/dayBg.png')
         background-position left top
@@ -48,7 +53,7 @@
         bgPersonName('img/languageBg.png')
         background-position left top
         font-size 17px
-        height 31px
+        height 30px
         padding-top 8px
         color $yellow
         span 
@@ -59,7 +64,7 @@
         bgPersonName('img/shareBg.png')
         background-position left top
         padding-top 5px
-        height 53px
+        height 51px
         .text
           width 30%
           font-family 'InputMonoCompressed-Regular'
@@ -73,6 +78,9 @@
           line-height 1
           display inline-block
           vertical-align middle
+        .icon-conferencia
+          display none
+          color $purpleStrong
         [class^="icon-"], [class*=" icon-"]
           opacity .5
           margin 0 5px
@@ -120,3 +128,54 @@
         color #5E958A
         &:hover
           color white
+          
+
+
+@media screen and (max-width:  1000px) 
+  #conferences
+    .profile
+      .details
+        div:not(span)
+          font-size 32px
+      
+@media screen and (max-width: 767px) 
+  #conferences
+    .biography
+      .social, p, h3
+        padding-left 0
+    .profile
+      .imContainer
+        background-size 120% !important
+        background-position center !important
+        width 100%
+      .details
+        position relative
+        top -20px
+        right 0
+        width 100%
+        display block
+        text-align center
+        .day, .hour, .language, .social
+          display inline-block
+          vertical-align top
+          width 33%
+          text-align left
+        .social
+          [class^="icon-"], [class*=" icon-"]
+            opacity 1
+          
+
+@media screen and (max-width: 568px) 
+  #conferences
+    .profile
+      .details
+        .day, .hour, .language, .social
+          width 45%
+        .social
+          height 30px
+          padding-top 0
+          .text
+            display none
+          .icon-conferencia
+            display inline
+        
