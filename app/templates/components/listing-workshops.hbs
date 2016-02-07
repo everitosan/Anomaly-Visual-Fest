@@ -1,15 +1,17 @@
-<div class="workshop workshop{{activity.person.second_name}}">
-  <img src="assets/img/workshop{{activity.person.second_name}}Bg.png">
-  <div class="name">
-    <div class="w_name">
-      {{activity.name}}
+<a href="/workshops/{{activity.id}}"> 
+  <div class="workshop workshop{{activity.person.second_name}}">
+    <img src="assets/img/workshop{{activity.person.second_name}}Bg.png">
+    <div class="name">
+      <div class="w_name">
+        {{activity.name}}
+      </div>
+      <div class="full_name">
+        <span>Imparte: </span>
+        <span class="f_name">{{activity.person.name}}</span>
+        <span class="s_name">{{activity.person.second_name}}</span>
+        <span class="speciality">{{activity.person.speciality}}</span>
+      </div>
+      
     </div>
-    <div class="full_name">
-      <span>Imparte: </span>
-      <span class="f_name">{{activity.person.name}}</span>
-      <span class="s_name">{{activity.person.second_name}}</span>
-      <span class="speciality">{{activity.person.speciality}}</span>
-    </div>
-    
   </div>
-</div>
+</a>
