@@ -12,7 +12,9 @@
     "firebase": "^2.1.0",
     "gsap": "greensock#~1.18.2",
     "normalize-css": "~3.0.3",
-    "pure": "~0.6.0"
+    "pure": "~0.6.0",
+    "remarkable": "^1.6.2",
+    "highlightjs": "^9.1.0"
   },
   "resolutions": {
     "ember": "2.2.0"

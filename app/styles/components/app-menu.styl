@@ -1,13 +1,33 @@
 #menu
-  background url('img/menuBg.png')
-  cursor pointer
-  height 67px
   position absolute
-  right 15%
-  top 50px
-  width 60px
   z-index 1000
   text-align center
+  width 100%
+  .menuHandler
+    cursor pointer
+    position absolute
+    background url('img/menuBg.png')
+    right 13%
+    width 60px
+    top 50px
+    height 67px
+  .getTickets
+    cursor pointer
+    bgPerson('img/getTickectsBg.png')
+    right 20%
+    position absolute
+    width 200px
+    height 160px
+    font-family 'bebas'
+    font-size 34px
+    .text
+      position relative 
+      top 2em
+      text-align left
+      width 76%
+      margin 0 auto
+      span
+        display block
   .openMenu
     position relative
     top .5em
@@ -68,3 +88,24 @@
     &.selection-leave-active
       opacity 0.01
       transition opacity .5s ease-in
+      
+
+@media screen and (max-width: 1000px)
+  #menu
+    .menuHandler
+      right 0
+      top 0
+      width 43px
+      height 50px
+      [class^="icon-"], [class*=" icon-"]
+        font-size 1.6em
+    .getTickets
+      background url('img/menuBg-min.jpg')
+      background-size auto 100%
+      left 0
+      width 100%
+      height 50px
+      .text
+        top .2em
+        span
+          display inline
