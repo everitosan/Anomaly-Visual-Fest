@@ -1,15 +1,17 @@
 #index
-  .image
-    position relative
-    img
-      position absolute
-      top 10px
-      left 0
-      width 100%
+  canvas
+    background url('img/glitch.png'), url('img/head.png'), url('img/detailBgHead.png')
+    background-size auto 100%, auto 100%, auto 100%
+    background-position right center
+    background-repeat no-repeat
+    width 100%
+    height 0
+    padding-top 85%
+
   .head
-    position relative
-    padding-top 8em
-    padding-bottom 15em
+    position absolute
+    top 117px
+    z-index 10
     [class^="icon-"], [class*=" icon-"]
       font-size 22em
     .date
@@ -56,10 +58,29 @@
       background-size 100%   
       background-repeat no-repeat
       background-position center
-      
+  
+@media screen and (max-width: 1024px)
+  #index
+    canvas
+      background-size 100% auto, 100% auto, 100% auto
+      position absolute
+      top 20%
+      padding-top 0
+      height 80%
+      background-position 25%
+    .head
+      margin-bottom 11em
+      position relative     
 
 @media screen and (max-width: 767px) 
   #index
+    canvas
+      background-size auto 100% , auto 100% , auto 100% 
+      height 60%
+      background-position 25% 
+      top 16%
+    .anomally
+      padding-bottom 23%
     .conferencistas, .talleres
       h2
         text-align center
@@ -69,11 +90,12 @@
       [class^="icon-"], [class*=" icon-"]
         font-size 14em
       .date
+        width 80%
         .days
           display inline
           left 0
-        .month
-          font-size 75px
+          &, .month
+            font-size 55px
       .des
         width 100%
         text-align center
