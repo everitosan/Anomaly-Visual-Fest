@@ -1,0 +1,30 @@
+{{yield}}
+<article id="paginate">
+  <div class="pure-g">
+    
+    <div class="pure-u-1-24 pure-u-md-2-24"></div>
+    <div class="pure-u-11-24 pure-u-md-10-24">
+        <div class="pointer Prev" {{action "goPrev"}}>  
+        {{#link-to 'conferences.conference' prev}}    
+          <div>
+            <img src="assets/img/pointer.png">
+            <span>Anterior</span>
+          </div>
+        {{/link-to}}
+        </div>
+    
+    </div>
+    <div class="pure-u-11-24 pure-u-md-10-24">
+
+        <div class="pointer Post" {{action "goNext"}}> 
+        {{#link-to 'conferences.conference' post}}    
+          <div>
+            <span>Siguiente</span>
+            <img src="assets/img/pointer.png">
+          </div>
+        {{/link-to}}
+        </div>
+    </div>
+    <div class="pure-u-1-24 pure-u-md-2-24"></div>
+  </div>    
+</article>

@@ -1,10 +1,5 @@
 {{ outlet }}
 
-{{#each model as |conference|}}
-  {{#link-to 'conferences.conference' conference}} 
-    {{conference.name}}
-  {{/link-to}} 
-{{/each}}
+{{conference-paginate model=model}}
 
-
-  {{footer-button type='Tickets'  }}
+{{footer-button type='Tickets'  }}
