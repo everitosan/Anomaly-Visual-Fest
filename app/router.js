@@ -7,13 +7,15 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('index', {path : '/'});
-  this.route('conferences');
-  this.route('conference',  { path:'conference/:conference_id'});
+  this.route('conferences', function() {
+    this.route('conference',  { path:':conference_id'});
+  });
   this.route('workshops');
   this.route('workshop',  { path:'/workshop/:workshop_id'});
   this.route('calendar');
   this.route('tickets');
   this.route('location');
+  this.route('page-not-found', { path: '/*wildcard' });
 });
 
 export default Router;
