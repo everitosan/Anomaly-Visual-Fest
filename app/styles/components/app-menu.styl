@@ -38,7 +38,7 @@
     position fixed
     height 67px
     width 60px
-    right 15%
+    right 13%
     top 66px
   .selection
     background rgba($violet)
@@ -99,6 +99,9 @@
       height 50px
       [class^="icon-"], [class*=" icon-"]
         font-size 1.6em
+    .closeMenu
+      top 9px
+      right -6px
     .getTickets
       background url('img/menuBg-min.jpg')
       background-size auto 100%
@@ -109,3 +112,19 @@
         top .2em
         span
           display inline
+          
+@media screen and (max-width: 568px)
+  #menu
+    .getTickets
+      .text
+        width 100%
+        padding-left .1em
+    [class^="icon-"], [class*=" icon-"]
+      font-size 1.8em
+    .selection
+      ul
+        li
+          margin .5em
+      .foot
+        padding-top 0
+
