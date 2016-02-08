@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model(params) {
-    return this.store.filter("activity", {filter: { type: 'C' });
+    return this.store.query("activity", {filter: { type: 'C' }});
   }
   // ,
   // afterModel(model, params) {
