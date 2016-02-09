@@ -8,20 +8,21 @@
       display inline-block
       vertical-align top
       margin 15px 4px
+      opacity .5
       position relative
-    .fb-share-button
+      &:hover
+        cursor pointer
+        opacity 1
+    .fb-share-button, #twitter-widget-0
+      position absolute !important
       opacity 0
-      margin 0
-      position absolute
+      z-index 2
       top 0
       left 0
+      width 100% !important
     .icon-conferencia
       display none
       color $purpleStrong
     [class^="icon-"], [class*=" icon-"]
-      opacity .5
       font-size 15px
       margin 0 5px
-      &:hover
-        cursor pointer
-        opacity 1
