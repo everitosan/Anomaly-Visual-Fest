@@ -16,7 +16,7 @@
       </div>
       <div class="pure-u-1-24 pure-u-md-2-24"></div>
 
-    </div>  
+    </div>
 
 
     <div class="pure-g">
@@ -40,14 +40,15 @@
           </div>
           <div class="social">
             <div class="text">Compartir este evento</div>
-            <span class="icon-twitter"></span>
-            <span class="icon-facebook"></span>
+            <div id="social-share">
+              {{social-share}}
+            </div>
           </div>
         </div>
       </div>
       <div class="pure-u-1 pure-u-md-2-24"></div>
     </div>
-    
+
   </article>
 
   <article>
@@ -60,7 +61,7 @@
           {{md model.person.biography}}
           <div class="social">
             <a target="_blank" href="{{model.person.website}} "> website </a>
-            
+
             <a target="_blank" href="http://twitter.com/{{model.person.social.twitter}}">
               <span class="icon-twitter"></span>
             </a>
@@ -75,7 +76,7 @@
 
           </div>
         </div>
-        
+
       <h2 class="workTitle">Trabajo</h2>
       </div>
 
@@ -93,5 +94,5 @@
       </div>
       <div class="pure-u-1 pure-u-md-2-24"></div>
     </div>
-  </article>  
+  </article>
 </section>
