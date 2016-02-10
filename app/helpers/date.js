@@ -9,7 +9,19 @@ export function date(params) {
   if (params[1] === "day") {
     returnV = d.getDate() + ' de ' + months[ d.getMonth() ] ; 
   } else if(params[1]==="time"){
-    returnV = d.getHours() + ':' + d.getMinutes()+'HRS';
+    let hours = d.getHours();
+    let minutes = d.getMinutes();
+
+    if(minutes === 0) {
+      minutes = "00";
+    }
+
+    if(hours < 9) {
+       hours = "0"+ hours;
+    }
+
+    returnV = hours + ':' + minutes+' HRS';
+
   }
   return returnV;
 }
