@@ -57,21 +57,12 @@
         <h2>Acerca de</h2>
         <div class="biography">
           {{md model.person.biography}}
-          <div class="social">
-            <a target="_blank" href="{{model.person.website}} "> website </a>
-
-            <a target="_blank" href="http://twitter.com/{{model.person.social.twitter}}">
-              <span class="icon-twitter"></span>
-            </a>
-
-            <a target="_blank" href="http://facebook.com/{{model.person.social.facebook}}">
-              <span class="icon-facebook"></span>
-            </a>
-
-             <a target="_blank" href="http://instagram.com/{{model.person.social.instagram}}">
-              <span class="icon-instagram"></span>
-            </a>
-
+          <div id="social-links">
+            {{social-links type='website' link=model.person.website}}
+            {{social-links type='facebook' link=model.person.social.facebook}}
+            {{social-links type='twitter' link=model.person.social.twitter}}
+            {{social-links type='instagram' link=model.person.social.instagram}}
+            
           </div>
         </div>
 
