@@ -1,12 +1,12 @@
 {{#if isWebsite}}
   <a target="_blank" href="{{link}} "> website </a>
 {{else if isFacebook}}
-  <a target="_blank" href="http://twitter.com/{{link}}">
-    <span class="icon-twitter"></span>
-  </a>
-{{else if isTwitter}}
   <a target="_blank" href="http://facebook.com/{{link}}">
     <span class="icon-facebook"></span>
+  </a>
+{{else if isTwitter}}
+  <a target="_blank" href="http://twitter.com/{{link}}">
+    <span class="icon-twitter"></span>
   </a>
 {{else if isInstagram}}
   <a target="_blank" href="http://instagram.com/{{link}}">
