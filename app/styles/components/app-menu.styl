@@ -13,7 +13,10 @@
     height 67px
   .getTickets
     cursor pointer
-    bgPerson('img/getTickectsBg.png')
+    background url('img/getTickectsBg.png')
+    background-size auto 100%
+    background-position center
+    background-repeat no-repeat
     right 20%
     position fixed
     width 200px
@@ -28,6 +31,11 @@
       margin 0 auto
       span
         display block
+    &:hover
+      background url('img/top_solicitar_boletos.gif'), url('img/getTickectsBg.png')
+      background-size 95%, auto 100%
+      background-position center 1px, center
+      background-repeat no-repeat, no-repeat
   .openMenu
     position relative
     top .5em
