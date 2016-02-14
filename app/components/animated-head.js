@@ -51,12 +51,10 @@ export default Ember.Component.extend({
     //loop that resolve the main acoording to the enviorment
     images.forEach((image, index , array) => {
       array[index] = 'assets/img/' + image;
-      if(ENV.environment !== "development") {
-        array[index] = this.assets.resolve(image);
+      if(ENV.environment === "production") {
+        array[index] = this.assets.resolve(array[index]);
       }
     });
-
-    console.log(images);
 
     //loop that return the image elements when loaded and call the drawHead function
     images.forEach((image, index, array) => {
