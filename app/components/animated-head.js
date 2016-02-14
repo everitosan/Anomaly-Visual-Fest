@@ -56,6 +56,8 @@ export default Ember.Component.extend({
       }
     });
 
+    console.log(images);
+
     //loop that return the image elements when loaded and call the drawHead function
     images.forEach((image, index, array) => {
       let im = new Image();
