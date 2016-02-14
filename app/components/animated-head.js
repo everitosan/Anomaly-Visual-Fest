@@ -7,12 +7,10 @@ export default Ember.Component.extend({
   width : Ember.computed(function() {
     return window.innerWidth;
   }),
-  
+
   height: Ember.computed(function() {
     return this.get('width') * 0.85;
   }),
-  
-//  attributeBindings: ['width','height'],
 
   didInsertElement: function() {
     let canvas = this.get('element');
@@ -24,12 +22,11 @@ export default Ember.Component.extend({
     this.set('ctx', ctx);
     this.resolveAssets();
     window.onresize = this.resize.bind(this);
-  
+
   },
 
   resize : function() {
     let canvas = this.get('element');
-    let ctx = canvas.getContext('2d');
 
     this.set('width',  window.innerWidth);
     this.set('height',  this.get('width') * 0.85);
@@ -37,10 +34,10 @@ export default Ember.Component.extend({
     canvas.width = this.get('width');
     canvas.height = this.get('height');
     this.drawHead();
-    
+
   },
   resolveAssets: function() {
-    let images = ['head.png'], 
+    let images = ['head.png'],
         imageElements = [];
     let _self = this;
     let indexHelpr = 0,
@@ -67,18 +64,18 @@ export default Ember.Component.extend({
         if (indexHelpr === lenHelpr) {
           _self.set('ImagesList', imageElements);
 
-        let loop = setInterval(_self.drawHead.bind(_self) ,500);
+          setInterval(_self.drawHead.bind(_self) ,500);
         }
       };
     });
 
-    
+
   },
 
   drawHead : function() {
     let ctx = this.get('ctx');
     let images = this.get('ImagesList');
-    
+
     this.clear();
     images.forEach((image) => {
       ctx.drawImage(image, 0, 0, this.get('width'), this.get('height'));
@@ -107,7 +104,7 @@ export default Ember.Component.extend({
   },
   clear : function() {
     let ctx = this.get('ctx');
-    
+
     ctx.save();
     ctx.globalCompositeOperation = 'copy';
     ctx.fillStyle = 'rgba(0,0,0,0)';
