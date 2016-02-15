@@ -8,7 +8,6 @@ export default Ember.Component.extend({
 
     function intRand(a, b) {
       let rand = parseInt( (Math.random() * (b - a) + a) );
-      console.log(rand);
       return rand;
     }
 
