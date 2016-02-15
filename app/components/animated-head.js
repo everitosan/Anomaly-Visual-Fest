@@ -12,6 +12,10 @@ export default Ember.Component.extend({
     return this.get('width') * 0.85;
   }),
 
+  willDestroyElement: function(){
+    let interval = this.get('interval');
+    clearInterval(interval);
+  },
   didInsertElement: function() {
     let canvas = this.get('element');
     let ctx = canvas.getContext('2d');
@@ -63,8 +67,8 @@ export default Ember.Component.extend({
         indexHelpr ++;
         if (indexHelpr === lenHelpr) {
           _self.set('ImagesList', imageElements);
-
-          setInterval(_self.drawHead.bind(_self) ,500);
+          let interval = setInterval(_self.drawHead.bind(_self) ,500);
+          _self.set('interval', interval);
         }
       };
     });
