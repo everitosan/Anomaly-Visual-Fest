@@ -1,6 +1,6 @@
 {{#link-to 'conferences.conference' activity}}
-  <div class="person person{{index}}">
-    <img src="{{activity.image}}">
+  <div class="person person{{index}}" >
+    {{gif-image imageUrl=activity.image type="homeActivity"}}
     <div class="name">
       <div class="full_name">
         <div class="f_name"> {{ activity.person.name }} </div>
@@ -10,7 +10,7 @@
         <div class="location"> {{ activity.person.location }}  </div>
         <div class="speciality">{{ activity.person.speciality }} </div>
       </div>
-      
+
     </div>
   </div>
 {{/link-to}}

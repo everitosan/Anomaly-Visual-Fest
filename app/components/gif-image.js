@@ -18,11 +18,25 @@ export default Ember.Component.extend({
         resolve(this);
       };
     }).then(function(image){
-      let fix_scale = (_self.get('type') === "profile" )? 1.2 : 1;
-      let proportion = parseInt(image.height/(image.width*fix_scale)*100);
+      if(_self.get('type') === "homeActivity") {
+
+        let nw = parseInt($('.conferencistas').css('width'));
+        let pp = 1180 / nw;
+
+        let imw = image.width * pp;
+        let proportion = parseInt(image.height/(imw)*100);
 
 
-      _self.set('computedStyle', Ember.String.htmlSafe("background: url("+imageUrl+"); padding-bottom:"+ proportion +"%;") );
+        _self.set('computedStyle', Ember.String.htmlSafe("background: url("+imageUrl+"); padding-bottom:"+ proportion +"%; width:"+ imw +"px;"));
+      }else {
+        let fix_scale = (_self.get('type') === "profile" )? 1.2 : 1;
+        let proportion = parseInt(image.height/(image.width*fix_scale)*100);
+        _self.set('computedStyle', Ember.String.htmlSafe("background: url("+imageUrl+"); padding-bottom:"+ proportion +"%;") );
+        _self.set('computedStyle', Ember.String.htmlSafe("background: url("+imageUrl+"); padding-bottom:"+ proportion +"%;") );
+
+      }
+
+
     }, function(reason) {
       console.log(reason);
     });
