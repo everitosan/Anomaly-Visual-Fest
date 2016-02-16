@@ -22,6 +22,12 @@
         font-size 55px
         letter-spacing 2px
         color $yellow
+    .location
+      text-transform uppercase
+      font-family 'league'
+      letter-spacing 2px
+      color $yellow
+      font-size 22px
     .intro, .des
       margin-top 1em
       font-family 'InputMonoCompressed-Light'
@@ -74,7 +80,6 @@
       .date
         width 80%
         .days
-          display inline
           left 0
           &, .month
             font-size 55px
@@ -85,3 +90,16 @@
           display block
         .cap
           text-transform capitalize
+
+@media screen and (max-width: 568px)
+  #index
+    .head
+      .date
+        .days, .month
+          color white
+          font-size 40px
+      .location
+        line-height 1
+        font-size 42px
+        .breakLine
+          display block
