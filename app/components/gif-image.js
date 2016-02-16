@@ -2,7 +2,17 @@ import Ember from 'ember';
 import ENV from '../config/environment';
 
 export default Ember.Component.extend({
-  computedStyle: Ember.computed('imageUrl', function() {
+  imageUrl : "",
+  image: "",
+  didUpdateAttrs: function(){
+    this.calculateCss();
+  },
+  computedStyle: Ember.computed(function() {
+    this.calculateCss();
+    return Ember.String.htmlSafe("background: #000");
+
+  }),
+  calculateCss: function() {
     let imageUrl = this.get('imageUrl');
     let _self = this;
 
@@ -11,7 +21,9 @@ export default Ember.Component.extend({
       imageUrl = this.assets.resolve(imageUrl);
     }
 
-    let imagePromise = new Ember.RSVP.Promise(function(resolve, reject) {
+    this.set('image', imageUrl);
+
+    new Ember.RSVP.Promise(function(resolve, reject) {
       let im = new Image();
       im.src=imageUrl;
       im.onload=function(){
@@ -32,7 +44,6 @@ export default Ember.Component.extend({
         let fix_scale = (_self.get('type') === "profile" )? 1.2 : 1;
         let proportion = parseInt(image.height/(image.width*fix_scale)*100);
         _self.set('computedStyle', Ember.String.htmlSafe("background: url("+imageUrl+"); padding-bottom:"+ proportion +"%;") );
-        _self.set('computedStyle', Ember.String.htmlSafe("background: url("+imageUrl+"); padding-bottom:"+ proportion +"%;") );
 
       }
 
@@ -42,6 +53,5 @@ export default Ember.Component.extend({
     });
 
 
-    return Ember.String.htmlSafe("background: #000");
-  })
+  }
 });
