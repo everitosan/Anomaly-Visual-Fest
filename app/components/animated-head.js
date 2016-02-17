@@ -4,21 +4,18 @@ import ENV from '../config/environment';
 export default Ember.Component.extend({
   tagName: 'canvas',
   ImagesList : [],
-  width : Ember.computed(function() {
-    return window.innerWidth;
-  }),
-
-  height: Ember.computed(function() {
-    return this.get('width') * 0.85;
-  }),
-
+  width: "",
+  height: "",
   willDestroyElement: function(){
     let interval = this.get('interval');
     clearInterval(interval);
   },
-  didInsertElement: function() {
+  didRender: function() {
     let canvas = this.get('element');
     let ctx = canvas.getContext('2d');
+
+    this.set('width', window.innerWidth);
+    this.set('height', this.get('width') * 0.85);
 
     canvas.width = this.get('width');
     canvas.height = this.get('height');

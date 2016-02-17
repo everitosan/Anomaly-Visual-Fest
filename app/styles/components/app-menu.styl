@@ -13,33 +13,32 @@
     height 67px
   .getTickets
     cursor pointer
-    background url('img/getTickectsBg.png')
+    background url('img/getTickectsBg.jpg')
     background-size auto 100%
     background-position center
     background-repeat no-repeat
     right 20%
     position fixed
     width 200px
-    height 160px
+    height 117px
     font-family 'bebas'
-    font-size 34px
+    font-size 21px
     .text
-      position relative 
-      top 2em
+      position relative
+      top 3.75em
       text-align left
       width 76%
       margin 0 auto
-      span
-        display block
+
     &:hover
-      background url('img/top_solicitar_boletos.gif'), url('img/getTickectsBg.png')
+      background url('img/top_solicitar_boletos.gif'), url('img/getTickectsBg.jpg')
       background-size 95%, auto 100%
       background-position center 1px, center
       background-repeat no-repeat, no-repeat
   .openMenu
     position relative
     top .5em
-    display block 
+    display block
     margin 0 auto
   .closeMenu
     cursor pointer
@@ -71,7 +70,7 @@
           color inherit
           &:hover
             color $yellow
-          
+
   .foot
     padding-top 2em
     p
@@ -81,7 +80,7 @@
     .pleca
       background $purple
       position absolute
-      bottom 0 
+      bottom 0
       left 0
       height 10px
       width 100%
@@ -96,7 +95,7 @@
     &.selection-leave-active
       opacity 0.01
       transition opacity .5s ease-in
-      
+
 
 @media screen and (max-width: 1000px)
   #menu
@@ -119,14 +118,17 @@
       &:hover
         background-size 100% auto
       .text
-        top .2em
+        top 0
+        font-size 45px
         span
           display inline
-          
+
 @media screen and (max-width: 568px)
   #menu
     .getTickets
       .text
+        top 10px
+        font-size 30px
         width 100%
         padding-left .1em
     [class^="icon-"], [class*=" icon-"]
@@ -137,4 +139,3 @@
           margin .5em
       .foot
         padding-top 0
-

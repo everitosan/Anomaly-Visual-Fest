@@ -4,6 +4,7 @@ import ENV from '../config/environment';
 export default Ember.Component.extend({
   imageUrl : "",
   image: "",
+  imageElement: "",
   didUpdateAttrs: function(){
     this.calculateCss();
   },
@@ -12,6 +13,17 @@ export default Ember.Component.extend({
     return Ember.String.htmlSafe("background: #000");
 
   }),
+  resizeImage: function(){
+    let imageUrl = this.get('image');
+    let image = this.get('imageElement');
+    let nw = window.innerWidth;
+    let pp = nw / 1600 ;
+
+    let imw = image.width * pp;
+    let proportion = parseInt(image.height/(image.width)*100);
+
+    this.set('computedStyle', Ember.String.htmlSafe("background: url("+imageUrl+");background-size: 100%;padding-bottom:"+ proportion +"%; width:"+ imw +"px;"));
+  },
   calculateCss: function() {
     let imageUrl = this.get('imageUrl');
     let _self = this;
@@ -32,14 +44,11 @@ export default Ember.Component.extend({
     }).then(function(image){
       if(_self.get('type') === "homeActivity") {
 
-        let nw = parseInt($('.conferencistas').css('width'));
-        let pp = 1180 / nw;
+        _self.set('imageElement', image);
+        _self.resizeImage();
 
-        let imw = image.width * pp;
-        let proportion = parseInt(image.height/(imw)*100);
+        $(window).on('resize', _self.resizeImage.bind(_self));
 
-
-        _self.set('computedStyle', Ember.String.htmlSafe("background: url("+imageUrl+"); padding-bottom:"+ proportion +"%; width:"+ imw +"px;"));
       }else {
         let fix_scale = (_self.get('type') === "profile" )? 1.2 : 1;
         let proportion = parseInt(image.height/(image.width*fix_scale)*100);
