@@ -5,12 +5,23 @@ export default Ember.Component.extend({
   isCalendar: Ember.computed('type', function() {
     return this.get('type') === "Calendar";
   }),
-  mouseEnter() {
-    let $element = $(this.get('element'));
-    $element.addClass('hover');
-  },
-  mouseLeave() {
-    let $element = $(this.get('element'));
-    $element.removeClass('hover');
+
+  mouseMove(event) {
+    let mouseX = event.clientX;
+    let mouseY = event.clientY;
+
+    let button = this.get('element').querySelector('.button').getBoundingClientRect();
+    let $parent = Ember.$(this.get('element'));
+
+
+    if( mouseX >= button.left && mouseX <= button.right && mouseY >= button.top && mouseY <= button.bottom) {
+
+      $parent.addClass('hover');
+
+    } else {
+      $parent.removeClass('hover');
+    }
+
+
   }
 });
