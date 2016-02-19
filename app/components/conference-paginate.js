@@ -36,6 +36,7 @@ export default Ember.Component.extend({
   }),
   actions: {
     goNext() {
+      window.scrollTo(0, 0);
       let cur = this.get('current');
       if(cur < this.get('conferences').length - 2) {
         this.set('current', cur + 1 );
@@ -50,6 +51,7 @@ export default Ember.Component.extend({
       }
     },
     goPrev() {
+      window.scrollTo(0, 0);
       let cur = this.get('current');
       if(cur > 0 ) {
         this.set('current', cur - 1 );
