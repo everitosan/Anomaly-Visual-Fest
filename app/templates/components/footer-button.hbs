@@ -1,14 +1,11 @@
-<div class="footer-button">
-
-  {{#if isCalendar}}
-    {{#link-to "calendar"}}
-      <div class="button calendarButton"> Ver el Calendario</div>
-    {{/link-to}}
-  {{else}}
-    <a href="mailto:ixtapa@a.com.mx">
-      <div class="button ticketButton"> Comprar Boleto</div>
-    </a>
-  {{/if}}
+{{#if isCalendar}}
+  {{#link-to "calendar"}}
+    <div class="button calendarButton"> Ver el Calendario</div>
+  {{/link-to}}
+{{else}}
+  <a href="mailto:ixtapa@a.com.mx">
+    <div class="button ticketButton"> Comprar Boleto</div>
+  </a>
+{{/if}}
 
   
-</div>
