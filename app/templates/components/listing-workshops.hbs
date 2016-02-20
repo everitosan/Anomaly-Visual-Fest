@@ -1,6 +1,8 @@
 {{#link-to 'workshop' activity}}
   <div class="workshop workshop{{activity.person.second_name}}">
-    <img src="{{activity.image}}">
+
+    {{gif-image imageUrl=activity.image type="homeActivity"}}
+
     <div class="name">
       <div class="w_name">
         {{activity.name}}
@@ -11,7 +13,7 @@
         <span class="s_name">{{activity.person.second_name}}</span>
         <span class="speciality">{{activity.person.speciality}}</span>
       </div>
-      
+
     </div>
   </div>
 {{/link-to}}
