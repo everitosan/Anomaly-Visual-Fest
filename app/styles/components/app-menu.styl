@@ -96,8 +96,14 @@
       opacity 0.01
       transition opacity .5s ease-in
 
-
 @media screen and (max-width: 1000px)
+  #menu
+    .menuHandler
+      right 10%
+    .getTickets
+      right 20%
+
+@media screen and (max-width: 767px)
   #menu
     .menuHandler
       right 0
@@ -118,10 +124,20 @@
       &:hover
         background-size 100% auto
       .text
-        top 0
-        font-size 45px
+        top 10px
+        font-size 30px
+        width 100%
+        padding-left 1em
         span
           display inline
+      [class^="icon-"], [class*=" icon-"]
+        font-size 1.8em
+      .selection
+        ul
+          li
+            margin .5em
+        .foot
+          padding-top 0
 
 @media screen and (max-width: 568px)
   #menu
@@ -130,7 +146,7 @@
         top 10px
         font-size 30px
         width 100%
-        padding-left .1em
+        padding-left 1em
     [class^="icon-"], [class*=" icon-"]
       font-size 1.8em
     .selection
