@@ -16,11 +16,17 @@ export default Ember.Component.extend({
   resizeImage: function(){
     let imageUrl = this.get('image');
     let image = this.get('imageElement');
-    let nw = window.innerWidth;
-    let pp = nw / 1600 ;
 
-    let imw = image.width * pp;
+    let nw = window.innerWidth;
     let proportion = parseInt(image.height/(image.width)*100);
+    let imw = 0;
+
+    if(nw <=1600) {
+      let pp = nw / 1600 ;
+      imw = image.width * pp;
+    } else {
+      imw =image.width;
+    }
 
     this.set('computedStyle', Ember.String.htmlSafe("background: url("+imageUrl+");background-size: 100%;padding-bottom:"+ proportion +"%; width:"+ imw +"px;"));
   },
@@ -47,7 +53,7 @@ export default Ember.Component.extend({
         _self.set('imageElement', image);
         _self.resizeImage();
 
-        $(window).on('resize', _self.resizeImage.bind(_self));
+        Ember.$(window).on('resize', _self.resizeImage.bind(_self));
 
       }else {
         let fix_scale = (_self.get('type') === "profile" )? 1.2 : 1;
