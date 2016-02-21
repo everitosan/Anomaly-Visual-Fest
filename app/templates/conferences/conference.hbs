@@ -1,87 +1,89 @@
-<section id="conferences" class="first">
-  <article>
-    <div class="pure-g">
-      <div class="pure-u-1-24 pure-u-md-2-24"></div>
-      <div class="pure-u-22-24 pure-u-md-20-24">
-        <div class="name">
-          {{ model.person.name }}
-          {{ model.person.second_name }}
-        </div>
+{{#liquid-bind model as |curModel|}}
+  <section id="conferences" class="first">
+    <article>
+      <div class="pure-g">
+        <div class="pure-u-1-24 pure-u-md-2-24"></div>
+        <div class="pure-u-22-24 pure-u-md-20-24">
+          <div class="name">
+            {{ curModel.person.name }}
+            {{ curModel.person.second_name }}
+          </div>
 
 
-        <div class="from">
-          <span class="location">
-            {{ model.person.location }}
-          </span>
-          {{ model.person.speciality }}
+          <div class="from">
+            <span class="location">
+              {{ curModel.person.location }}
+            </span>
+            {{ curModel.person.speciality }}
+          </div>
         </div>
+        <div class="pure-u-1-24 pure-u-md-2-24"></div>
+
       </div>
-      <div class="pure-u-1-24 pure-u-md-2-24"></div>
-
-    </div>
 
 
-    <div class="pure-g">
-      <div class="pure-u-1 pure-u-md-2-24"></div>
-      <div class="pure-u-1 pure-u-md-20-24 profile">
-        {{gif-image imageUrl=model.person.image type="profile" }}
-        <div class="details">
-          <div class="day">
-            <span> Día </span>
-            {{date model.dateTime 'day'}}
-          </div>
-          <div class="hour">
-            <span> Horario </span>
-            {{date model.dateTime 'time'}}
-          </div>
-          <div class="language">
-            <span>Lenguaje</span>
-            {{model.language}}
-          </div>
-          <div class="social">
-            <div class="text">Compartir este evento</div>
-            <div id="social-share">
-              {{social-share}}
+      <div class="pure-g">
+        <div class="pure-u-1 pure-u-md-2-24"></div>
+        <div class="pure-u-1 pure-u-md-20-24 profile">
+          {{gif-image imageUrl=curModel.person.image type="profile" }}
+          <div class="details">
+            <div class="day">
+              <span> Día </span>
+              {{date curModel.dateTime 'day'}}
+            </div>
+            <div class="hour">
+              <span> Horario </span>
+              {{date curModel.dateTime 'time'}}
+            </div>
+            <div class="language">
+              <span>Lenguaje</span>
+              {{curModel.language}}
+            </div>
+            <div class="social">
+              <div class="text">Compartir este evento</div>
+              <div id="social-share">
+                {{social-share}}
+              </div>
             </div>
           </div>
         </div>
+        <div class="pure-u-1 pure-u-md-2-24"></div>
       </div>
-      <div class="pure-u-1 pure-u-md-2-24"></div>
-    </div>
 
-  </article>
+    </article>
 
-  <article>
-    <div class="pure-g">
-      <div class="pure-u-1 pure-u-md-2-24"></div>
-      <div class="pure-u-1-24 pure-u-md-1-24"></div>
-      <div class="pure-u-22-24 pure-u-md-11-24">
-        <h2>Acerca de</h2>
-        <div class="biography">
-          {{md model.person.biography}}
-          <div id="social-links">
-            {{social-links type='website' link=model.person.website}}
-            {{social-links type='facebook' link=model.person.social.facebook}}
-            {{social-links type='twitter' link=model.person.social.twitter}}
-            {{social-links type='instagram' link=model.person.social.instagram}}
+    <article>
+      <div class="pure-g">
+        <div class="pure-u-1 pure-u-md-2-24"></div>
+        <div class="pure-u-1-24 pure-u-md-1-24"></div>
+        <div class="pure-u-22-24 pure-u-md-11-24">
+          <h2>Acerca de</h2>
+          <div class="biography">
+            {{md curModel.person.biography}}
+            <div id="social-links">
+              {{social-links type='website' link=curModel.person.website}}
+              {{social-links type='facebook' link=curModel.person.social.facebook}}
+              {{social-links type='twitter' link=curModel.person.social.twitter}}
+              {{social-links type='instagram' link=curModel.person.social.instagram}}
 
+            </div>
           </div>
+
+        <h2 class="workTitle">Trabajo</h2>
         </div>
 
-      <h2 class="workTitle">Trabajo</h2>
+        <div class="pure-u-1-24 pure-u-md-9-24"></div>
+        <div class="pure-u-1 pure-u-md-2-24"></div>
       </div>
-
-      <div class="pure-u-1-24 pure-u-md-9-24"></div>
-      <div class="pure-u-1 pure-u-md-2-24"></div>
-    </div>
-  </article>
-  <article class="work">
-    <div class="pure-g">
-      <div class="pure-u-1 pure-u-md-2-24"></div>
-      <div class="pure-u-1 pure-u-md-20-24">
-        {{gif-image  imageUrl= model.person.workImage}}
+    </article>
+    <article class="work">
+      <div class="pure-g">
+        <div class="pure-u-1 pure-u-md-2-24"></div>
+        <div class="pure-u-1 pure-u-md-20-24">
+          {{gif-image  imageUrl= curModel.person.workImage}}
+        </div>
+        <div class="pure-u-1 pure-u-md-2-24"></div>
       </div>
-      <div class="pure-u-1 pure-u-md-2-24"></div>
-    </div>
-  </article>
-</section>
+    </article>
+  </section>
+{{/liquid-bind}}
