@@ -13,6 +13,10 @@ App = Ember.Application.extend({
   Resolver
 });
 
+Ember.LinkComponent.reopen({
+  attributeBindings: ['data-text']
+});
+
 loadInitializers(App, config.modulePrefix);
 
 export default App;
