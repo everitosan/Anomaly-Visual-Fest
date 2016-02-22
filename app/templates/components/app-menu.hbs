@@ -16,44 +16,44 @@
 
   {{#if isMenuVisible}}
 
-    {{#transition-group transition-class="selection"}}
+
     <div class="selection VCenter">
       <div class="closeMenu">
         <span  {{action "hideMenu"}} class="icon-x"></span>
       </div>
 
       <ul>
-        <li {{action "hideMenu"}}>
+        <li  {{action "hideMenu"}}>
           {{#link-to "index"}}<span class="icon-logo1"></span>  {{/link-to}}
         </li>
         <li {{action "hideMenu"}} >
-          {{#link-to "conferences"}} Conferencias {{/link-to}}
+          {{#link-to "conferences"class="glitch" data-text="Conferencias"}} Conferencias {{/link-to}}
         </li>
         <li {{action "hideMenu"}} >
-          {{#link-to "workshops"}} Taller para docentes{{/link-to}}
+          {{#link-to "workshops"class="glitch" data-text="Taller para docens"}} Taller para docentes{{/link-to}}
         </li>
         <li {{action "hideMenu"}} >
-          {{#link-to "calendar"}} Calendario {{/link-to}}
+          {{#link-to "calendar"class="glitch" data-text="Calendario"}} Calendario {{/link-to}}
         </li>
         <li {{action "hideMenu"}} >
-          {{#link-to "tickets"}} Boletos {{/link-to}}
+          {{#link-to "tickets"class="glitch" data-text="Boletos"}} Boletos {{/link-to}}
         </li>
         <li {{action "hideMenu"}} >
-          {{#link-to "location"}} Sede {{/link-to}}
+          {{#link-to "location"class="glitch" data-text="Sede"}} Sede {{/link-to}}
         </li>
         <li  >
-          {{mailtolink 'Contacto' 'ixtapa@a.com.mx'}}
+          {{mailtolink 'Contacto' 'ixtapa@a.com.mx' 'glitch'}}
         </li>
       </ul>
       <div class="foot">
-        <p>Powered by</p>
+        <p class="glitch" data-text="Powered by">Powered by</p>
 
         <img src="assets/img/logos.png">
 
         <div class="pleca"></div>
       </div>
     </div>
-    {{/transition-group}}
+
 
   {{/if}}
 

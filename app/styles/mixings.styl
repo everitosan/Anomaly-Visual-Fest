@@ -3,20 +3,44 @@ bgPerson(url)
   background-size auto 100%
   background-position center
   background-repeat no-repeat
-  
+
 bgPersonName(url)
   background url(url)
   background-repeat no-repeat
   background-size auto 100%
   background-position right top
-  
+
 bgH2Min(url)
   background url(url)
-  background-size auto 100%   
+  background-size auto 100%
   background-repeat no-repeat
   background-position 0 center
-  
+
 setCalendar(percentage, color)
   padding-top percentage
   background color
   padding-bottom percentage
+
+glitchEfect()
+  &:after
+    animation glitch-animation 1s  linear alternate-reverse
+    background $purpleStrong
+    clip rect( 0, 900px, 0, 0 )
+    color white
+    content attr( data-text )
+    left 2px
+    overflow hidden
+    position absolute
+    text-shadow -1px 0 $yellow
+    top 0
+  &:before
+    animation glitch-animation-2 1s   linear alternate-reverse
+    background rgba($violet)
+    clip rect( 0, 900px, 0, 0 )
+    color white
+    content attr( data-text )
+    left -2px
+    overflow hidden
+    position absolute
+    text-shadow 1px 0 yellow
+    top 0
