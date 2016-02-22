@@ -19,12 +19,12 @@
 
     <div class="selection VCenter">
       <div class="closeMenu">
-        <span  {{action "hideMenu"}} class="icon-x"></span>
+        <span  {{action "hideMenu"}}  class="glitch" data-text="" >  </span>
       </div>
 
       <ul>
-        <li  {{action "hideMenu"}}>
-          {{#link-to "index"}}<span class="icon-logo1"></span>  {{/link-to}}
+        <li  {{action "hideMenu"}} class="logoMenu" >
+          {{#link-to "index" class="glitch" data-text=""}}  &#xe902;  {{/link-to}}
         </li>
         <li {{action "hideMenu"}} >
           {{#link-to "conferences"class="glitch" data-text="Conferencias"}} Conferencias {{/link-to}}
