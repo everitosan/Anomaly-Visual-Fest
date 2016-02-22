@@ -21,14 +21,14 @@ export default Ember.Component.extend({
       .to(menuElement, 0.025, {x:0, y:0, z:0.01})
       .to(menuContainer, 0.025, {x:0, y:0, z:0.01})
       ;
-      
+
     return timeLine;
   }),
   mouseEnter() {
     let timeLine = this.get('timeLine');
     timeLine.restart();
     timeLine.play();
-    
+
   },
   actions: {
     showMenu() {

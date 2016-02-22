@@ -28,9 +28,14 @@ export default Ember.Component.extend({
 
   resize : function() {
     let canvas = this.get('element');
+    if(window.innerWidth > 1500) {
+      this.set('width',  1500);
+      this.set('height',  this.get('width') * 0.85);
 
-    this.set('width',  window.innerWidth);
-    this.set('height',  this.get('width') * 0.85);
+    } else {
+      this.set('width',  window.innerWidth);
+      this.set('height',  this.get('width') * 0.85);
+    }
 
     canvas.width = this.get('width');
     canvas.height = this.get('height');
@@ -79,7 +84,8 @@ export default Ember.Component.extend({
 
     this.clear();
     images.forEach((image) => {
-      ctx.drawImage(image, 0, 0, this.get('width'), this.get('height'));
+
+      ctx.drawImage(image, 0, 0,  this.get('width') , this.get('height'));
       setTimeout(this.drawGlitch.bind(this), this.intRand(250, 1000) );
     });
   },
