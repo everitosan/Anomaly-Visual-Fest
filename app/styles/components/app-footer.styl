@@ -6,7 +6,7 @@ footer
     max-width 1180px
     margin 0 auto
   .info
-    width 50%
+    width 60%
     margin 0 auto
   h2
     font-family 'bebas'
@@ -17,6 +17,10 @@ footer
     font-family 'InputMonoCompressed-Regular'
     span 
       font-family 'InputMonoCompressed-Bold'
+    .bold
+      font-family 'InputMonoCompressed-Bold'
+    .inline
+      display inline-block  
   .button2FooterBg
     background url('img/button2FooterBg.png')
     font-size 22px
@@ -24,7 +28,7 @@ footer
     font-family 'bebas'
     display inline-block
     padding .6em 2em 
-    margin 1em 0 0 3%
+    margin 1em 0 0 
   .credits
     background url('img/divisora.png')
     background-repeat no-repeat
@@ -38,6 +42,13 @@ footer
     
 @media screen and (max-width: 767px) 
   footer
+    .ask
+      .inline
+        display block
+      .noBreak
+        display  inline
+      .hidden
+        display none
     .info
       width 100%
       text-align center
