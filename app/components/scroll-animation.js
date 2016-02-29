@@ -25,7 +25,7 @@ export default Ember.Component.extend({
       ctx.fillStyle = this.randomColor();
       ctx.fillRect( this.intRand(0, w), this.intRand(0, h), this.intRand(w/10, w/5), this.intRand(10, h/17));
     ctx.restore();
-    setTimeout(this.clear.bind(this), 800);
+    setTimeout(this.clear.bind(this), 100);
 
   },
   intRand: function(a, b) {
