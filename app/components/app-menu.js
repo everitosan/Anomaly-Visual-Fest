@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   isMenuVisible: false,
-  timeLine : Ember.computed(function(){
+  timeLine : function () {
     let menuElement = this.get('element').querySelector('.openMenu');
     let menuContainer = this.get('element').querySelector('.menuHandler');
 
@@ -14,18 +14,18 @@ export default Ember.Component.extend({
     let timeLine = new TimelineMax();
 
     timeLine
-      .to(menuElement, 0.025, {x:intRand(-100,0), y:intRand(-20,20), z:0.01})
+      .to(menuElement, 0.025, {x:intRand(-10,0), y:intRand(-2,2), z:0.01, opacity:0})
       .to(menuContainer, 0.025, {x:intRand(0,100), y:intRand(-10,10), z:0.01})
-      .to(menuElement, 0.025, {x:intRand(-100,0), y:intRand(-20,20), z:0.01})
-      .to(menuContainer, 0.025, {x:intRand(0,100), y:intRand(-10,10), z:0.01})
+      .to(menuElement, 0.025, {x:intRand(-10,0), y:intRand(-2,2), z:0.01, opacity:1})
+      .to(menuContainer, 0.025, {x:intRand(0,100), y:intRand(-10,10), z:0.01, opacity:0})
       .to(menuElement, 0.025, {x:0, y:0, z:0.01})
-      .to(menuContainer, 0.025, {x:0, y:0, z:0.01})
+      .to(menuContainer, 0.025, {x:0, y:0, z:0.01, opacity:1})
       ;
 
     return timeLine;
-  }),
+  },
   mouseEnter() {
-    let timeLine = this.get('timeLine');
+    let timeLine = this.timeLine();
     timeLine.restart();
     timeLine.play();
 
