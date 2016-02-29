@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import PersonComponent from './app-person';
 
-export default Ember.Component.extend({
+export default PersonComponent.extend({
 });
