@@ -65,20 +65,16 @@
   </article>
 
   <article class="talleres">
-    <div class="pure-g">
-      <div class="pure-u-1 pure-u-md-3-24"></div>
-      <div class="pure-u-1 pure-u-md-18-24">
-        <h2> taller para docentes </h2>
-        <div class="workshopsList">
-          {{#each model as |activity index| }}
-            {{#if activity.isWorkshop }}
-              {{ listing-workshops activity=activity index=index}}
-            {{/if}}
-          {{/each}}
-        </div>
+
+      <h2> taller para docentes </h2>
+      <div class="workshopsList">
+        {{#each model as |activity index| }}
+          {{#if activity.isWorkshop }}
+            {{ listing-workshops activity=activity index=index}}
+          {{/if}}
+        {{/each}}
       </div>
-      <div class="pure-u-1 pure-u-md-3-24"></div>
-    </div>
+     
 
   </article>
 
