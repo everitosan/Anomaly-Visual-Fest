@@ -23,7 +23,7 @@ setCalendar(percentage, color)
 
 glitchEfect()
   &:after
-    animation glitch-animation 1s  linear alternate-reverse
+    animation glitch-animation 1s arguments linear alternate-reverse
     background $purpleStrong
     clip rect( 0, 900px, 0, 0 )
     color white
@@ -34,7 +34,7 @@ glitchEfect()
     text-shadow -1px 0 $yellow
     top 0
   &:before
-    animation glitch-animation-2 1s   linear alternate-reverse
+    animation glitch-animation-2 1s  arguments linear alternate-reverse
     background rgba($violet)
     clip rect( 0, 900px, 0, 0 )
     color white
